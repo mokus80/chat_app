@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$("#chat").append("<%= j render(@message) %>");
+$("#new_message")[0].reset();
