@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 	
 	def index
-		last_checket_at = params[:last_checked_at]
+		#last_checket_at = params[:last_checked_at]
 		@messages = Message.all
 	end
 
@@ -14,4 +14,5 @@ class MessagesController < ApplicationController
 		@test = @messages = Message.all
 		render json: @test
 	end
+
 end
