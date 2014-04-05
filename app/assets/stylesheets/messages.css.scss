@@ -1,3 +1,16 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#chat {
+	list-style: none;
+	/*margin: 0;*/
+	padding: 0;
+	.timestamp {
+		margin-right: 10px;
+		color: #555;
+	}
+	li {
+		padding: 5px 0;
+	}
+}
