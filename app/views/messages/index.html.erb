@@ -1,13 +1,16 @@
 <h1>Chat</h1>
 
-<ul id="chat">
-  <% @messages.each do |message| %>
-  	<%= message.content %>
-  	<% end %>
-</ul>
-
-
-<%= form_for Message.new do |f| %>
-  <%= f.text_field :content %>
+<%= form_for(@message) do |f| %>
+  <%= f.text_field :content, autofocus: true %>
   <%= f.submit "Send" %>
 <% end %>
+
+
+<ul id="chat">
+  <% @messages.each do |message| %>
+  	<li>
+  		<span class="timestamp"><%= message.created_at %></span>
+  		<%= message.content %>
+  	</li>
+  	<% end %>
+</ul>
