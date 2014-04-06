@@ -1,7 +1,9 @@
-<h1>Chat</h1>
+<h1>Kartoffel Chat</h1>
+
+<a href="/auth/github" title="Sign in with Github" style = "float:right" >Sign in with Github</a>
 
 <%= form_for(@message) do |f| %>
-  <%= f.text_field :content, autofocus: true %>
+  <%= f.text_area :content, autofocus: true %>
   <%= f.submit "Send" %>
 <% end %>
 
@@ -9,11 +11,14 @@
 <ul id="chat">
   <% @messages.each do |message| %>
   	<li>
-  		<span class="user">Potato</span>
+      <img class="avatar" />
+  		<span class="user">Potato sagt:</span>
   		<span class="timestamp">
   			<%= time_ago_in_words(message.created_at) %> ago
   		</span>
-  		<%= message.content %>
+  		<span class="message"><%= message.content %></span>
   	</li>
   	<% end %>
 </ul>
+
+

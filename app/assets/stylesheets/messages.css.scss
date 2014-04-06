@@ -4,38 +4,50 @@
 
 
 #chat {
+
 	list-style: none;
 	padding: 0;
-	width: 300px;
-	border-right: 1px solid #eee;
+	width: 400px;
 
 	li {
 		padding: 5px;
-		padding-left: 55px;
+		padding-top: 10px;
+		padding-left: 60px;
 		padding-bottom: 15px;
 		min-height: 50px;
 		position: relative;
-		border: 1px solid #eee;
-		margin: 4px;
+		background-color: #f8f8f4;
+		border: 1px solid #f0f0f0;
+		margin: 4px 4px 20px 4px;
 		overflow: hidden;
 
 		.timestamp {
 			color: #666;
 			font-size: 0.7em;
 			position: absolute;
-			bottom: 2px;
-			right: 2px;
+			bottom: 4px;
+			right: 6px;
+		}
+
+		.avatar {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 10px;
+			left: 6px;
+			//border: 1px solid #ccc;
+			background-color: #eee;
 		}
 
 		.user {
-			width: 40px;
-			height: 40px;
-			text-indent: -99999px;
-			position: absolute;
-			top: 4px;
-			left: 4px;
-			border: 1px solid #ccc;
-			background-color: #ddd;
+			display: block;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.message {
+			font-size: 12px;
+			text-shadow: 0 1px 1px #fff;
 		}
 	}
 }
