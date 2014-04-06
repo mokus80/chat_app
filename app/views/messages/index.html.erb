@@ -1,18 +1,28 @@
 <h1>Kartoffel Chat</h1>
 
-<a href="/auth/github" title="Sign in with Github" style = "float:right" >Sign in with Github</a>
+
+<div class="user" style = "float:right">
+<% if current_user.nil? %>
+  <a href="/auth/github" title="Sign in with Github" >
+    Sign in with Github
+  </a>
+<% else %>
+  Logged in as <b><%= current_user.name %></b>
+  <a href="/signout">Logout</a>
+<% end %>
+</div>
 
 <%= form_for(@message) do |f| %>
-  <%= f.text_area :content, autofocus: true %>
+  <%= f.text_field :content, autofocus: true %>
   <%= f.submit "Send" %>
 <% end %>
 
 
 <ul id="chat">
   <% @messages.each do |message| %>
-  	<li>
+  	<li class="<%= message.user_id %>">
       <img class="avatar" />
-  		<span class="user">Potato sagt:</span>
+  		<span class="user"><%= message.user_name %></span>
   		<span class="timestamp">
   			<%= time_ago_in_words(message.created_at) %> ago
   		</span>

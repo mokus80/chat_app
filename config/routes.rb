@@ -6,9 +6,11 @@ ChatApp::Application.routes.draw do
 
   get '/', to: 'messages#index'
 
+  resources :sessions
+
   get '/auth/:provider/callback', to: 'sessions#create'
 
-  match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/signout', to: 'sessions#destroy', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

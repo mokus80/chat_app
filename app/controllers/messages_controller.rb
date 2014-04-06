@@ -7,7 +7,11 @@ class MessagesController < ApplicationController
 	end
 
 	def create
-		Message.create(params[:message].permit(:content, :user))
+		message = Message.new(params[:message].permit(:content))
+		if current_user.present?
+			message.user_id = current_user.id
+		end
+		message.save!
 		redirect_to '/'
 	end
 

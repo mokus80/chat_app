@@ -1,19 +1,16 @@
 class SessionsController < ApplicationController
 
-	def create
+  def create
     info = auth_hash[:info]
-    user = User.find_or_create_by(:name => info[:nickname], :picture => info[:image])
-    if user.nil?
-    	redirect_to '/auth/:provider/callback'
-    else
-    	#sign_in user
-    	redirect_to '/', :notice => "Signed in!"
- 	  end
+    puts params, auth_hash
+    user = User.find_or_create_by(name: info[:nickname], picture: info[:image])
+    sign_in user
+    redirect_to '/'
   end
 
   def destroy
- 	  sign_out
- 	  redirect_to '/'
+    sign_out
+    redirect_to '/'
   end
 
   protected
