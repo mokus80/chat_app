@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
 	end
 
 	def test
-		@test = Message.all
+		@test = User.all
 		render json: @test
 	end
 
