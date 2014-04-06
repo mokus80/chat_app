@@ -16,5 +16,6 @@
 /tmp
 
 /config/github.yml
+/.env
 
 /public/assets/**
