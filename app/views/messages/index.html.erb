@@ -20,7 +20,7 @@
 
 <ul id="chat">
   <% @messages.each do |message| %>
-  	<li class="<%= message.user_id %>">
+  	<li>
       <img class="avatar" />
   		<span class="user"><%= message.user_name %></span>
   		<span class="timestamp">
