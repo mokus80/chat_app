@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     puts params, auth_hash
     user = User.find_or_create_by(name: info[:nickname], picture: info[:image])
     sign_in user
-    redirect_to '/'
+    redirect_to '/messages'
   end
 
   def destroy

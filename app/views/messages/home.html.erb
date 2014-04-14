@@ -1,0 +1,12 @@
+<h1>Welcome to Kartoffel</h1>
+
+<div class="user" style = "float:right">
+<% if current_user.nil? %>
+  <a href="/auth/github" title="Sign in with Github" >
+    Sign in with Github
+  </a>
+<% else %>
+  Logged in as <b><%= current_user.name %></b>
+  <a href="/signout">Logout</a>
+<% end %>
+</div>

@@ -4,7 +4,7 @@ ChatApp::Application.routes.draw do
 
   get '/test', to: 'messages#test'
 
-  get '/', to: 'messages#index'
+  get '/', to: 'messages#home'
 
   resources :sessions
 

@@ -38,6 +38,14 @@ module SessionsHelper
     signed_in? && (current_user?(model.user) || @current_user.admin?)
   end
 
+  def admin
+    if signed_in?
+      render text: "Access denied", status: :unauthorized unless current_user.admin?
+    else
+      render text: "Access denied", status: :unauthorized 
+    end
+  end
+
 
   def gravatar_for(user)
     if user.email.present?

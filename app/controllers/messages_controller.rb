@@ -1,5 +1,9 @@
 class MessagesController < ApplicationController
-	
+	before_action :admin, only: [:index, :create]
+
+	def home
+	end
+		
 	def index
 		@messages = Message.limit(10).order('created_at desc')
 		@message = Message.new
