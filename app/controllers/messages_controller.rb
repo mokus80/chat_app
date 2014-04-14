@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 			message.user_id = current_user.id
 		end
 		message.save!
-		redirect_to '/'
+		redirect_to '/messages'
 	end
 
 	def test
