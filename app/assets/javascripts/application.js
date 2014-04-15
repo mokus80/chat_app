@@ -13,3 +13,12 @@
 
 //$("#chat").append("<%= j render(@message) %>");
 //$("#new_message")[0].reset();
+
+
+setTimeout(function(){
+	if ($(".message").length > 0) {
+		$("#chat").append("<%= render(@message) %>")
+	}, 3000;
+});
+
+
